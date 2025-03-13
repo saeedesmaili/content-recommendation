@@ -27,7 +27,7 @@ When saving content from across the web, it's difficult to determine which new a
    - Hackernews new items
    - r/LocalLLaMA and other subreddits
 7. Extract the text, summarize, and generate embeddings for the new content
-8. Find the ones that are close to my interests and add them into an RSS feed
+8. Find the ones that are close to our interests and add them into an RSS feed
 
 ### Recommendation Methods
 
@@ -77,27 +77,27 @@ When saving content from across the web, it's difficult to determine which new a
 
 ## Current Limitations
 
-Without examples of uninteresting content, my system might:
+Without examples of uninteresting content, our system might:
 
-- Recommend content that's similar to my liked items but still not interesting to me
+- Recommend content that's similar to our liked items but still not interesting to me
 - Struggle with ambiguous cases that fall between interest clusters
-- Have difficulty establishing clear boundaries for what I don't like
+- Have difficulty establishing clear boundaries for what we don't like
 
 ### Solutions to Consider
 
-1. **Collect negative examples**: If possible, gathering examples of content I explicitly don't like would be extremely valuable. Even a small set of "not interested" examples gives my model boundaries to learn from.
+1. **Collect negative examples**: If possible, gathering examples of content we explicitly don't like would be extremely valuable. Even a small set of "not interested" examples gives our model boundaries to learn from.
 
-2. **Implement a threshold approach**: Without negative examples, I can set stricter similarity thresholds, but I'll need to tune these carefully through testing.
+2. **Implement a threshold approach**: Without negative examples, we can set stricter similarity thresholds, but I'll need to tune these carefully through testing.
 
-3. **Anomaly detection**: Treat my interests as the "normal" pattern, and anything significantly different as potentially uninteresting.
+3. **Anomaly detection**: Treat our interests as the "normal" pattern, and anything significantly different as potentially uninteresting.
 
 4. **Implicit negative feedback**: Track content I've seen but chosen not to save/like as implicit negative examples.
 
-5. **Active learning**: Implement a feedback mechanism where I explicitly mark false positives (recommended but not interesting) to improve the system over time.
+5. **Active learning**: Implement a feedback mechanism where we explicitly mark false positives (recommended but not interesting) to improve the system over time.
 
 ### Updated Implementation Approach
 
-1. Start with my liked content approach
+1. Start with our liked content approach
 2. Add a mechanism to collect and incorporate negative examples over time
-3. Implement an active learning component where I can provide feedback
-4. Consider using a binary classifier (interested/not interested) once I have enough negative examples
+3. Implement an active learning component where we can provide feedback
+4. Consider using a binary classifier (interested/not interested) once we have enough negative examples
