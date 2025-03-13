@@ -23,6 +23,11 @@ When saving content from across the web, it's difficult to determine which new a
 4. Generate embeddings for each content summary using an embeddings API (gemini or openai) or sentence-transformers
 5. Store these embeddings for comparison with new content
    - [ ] Where to store the embeddings?
+6. Use Github actions to check for the new content from desired sources
+   - Hackernews new items
+   - r/LocalLLaMA and other subreddits
+7. Extract the text, summarize, and generate embeddings for the new content
+8. Find the ones that are close to my interests and add them into an RSS feed
 
 ### Recommendation Methods
 
