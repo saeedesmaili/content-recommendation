@@ -17,9 +17,12 @@ When saving content from across the web, it's difficult to determine which new a
 
 ### Data Processing
 
-1. Extract text content from saved articles in Pocket or similar services
-2. Generate embeddings for each piece of liked content
-3. Store these embeddings for comparison with new content
+1. Get the list of the saved articles from Pocket
+2. Extract the text content from saved articles using r.jina.ai or readibility
+3. Summarize the text content into a few paragraphs using an LLM (gemini flash or a local LLM)
+4. Generate embeddings for each content summary using an embeddings API (gemini or openai) or sentence-transformers
+5. Store these embeddings for comparison with new content
+   - [ ] Where to store the embeddings?
 
 ### Recommendation Methods
 
