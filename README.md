@@ -74,3 +74,30 @@ When saving content from across the web, it's difficult to determine which new a
 - Implement proof of concept with existing saved content
 - Develop evaluation metrics to measure recommendation quality
 - Create simple interface for testing recommendations
+
+## Current Limitations
+
+Without examples of uninteresting content, my system might:
+
+- Recommend content that's similar to my liked items but still not interesting to me
+- Struggle with ambiguous cases that fall between interest clusters
+- Have difficulty establishing clear boundaries for what I don't like
+
+### Solutions to Consider
+
+1. **Collect negative examples**: If possible, gathering examples of content I explicitly don't like would be extremely valuable. Even a small set of "not interested" examples gives my model boundaries to learn from.
+
+2. **Implement a threshold approach**: Without negative examples, I can set stricter similarity thresholds, but I'll need to tune these carefully through testing.
+
+3. **Anomaly detection**: Treat my interests as the "normal" pattern, and anything significantly different as potentially uninteresting.
+
+4. **Implicit negative feedback**: Track content I've seen but chosen not to save/like as implicit negative examples.
+
+5. **Active learning**: Implement a feedback mechanism where I explicitly mark false positives (recommended but not interesting) to improve the system over time.
+
+### Updated Implementation Approach
+
+1. Start with my liked content approach
+2. Add a mechanism to collect and incorporate negative examples over time
+3. Implement an active learning component where I can provide feedback
+4. Consider using a binary classifier (interested/not interested) once I have enough negative examples
